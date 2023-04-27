@@ -13,6 +13,7 @@ def change_status(n: dict, z: int) -> dict:
 
 
 
+
 l = []
 cat_in_hat = 0
 for i in range(1, 11):
@@ -24,7 +25,7 @@ dict = dict.fromkeys(tuple(l),1)
 # print(change_status(dict, 1))
 
 # print(dict)
-def a():
+def print_cats_with_hats():
     l = []
     # cat_in_hat = 0
     for i in range(1, 11):
