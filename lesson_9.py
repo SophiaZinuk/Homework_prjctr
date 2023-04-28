@@ -7,42 +7,43 @@
 
 # Write a program that simply outputs which cats have hats at the end.
 
+""" 
+According to the given dictionary and key, 
+we change the corresponding factorial value to the opposite
+"""
+
+
 def change_status(n: dict, z: int) -> dict:
     n.update([(z, int(not n.get(z)))])
     return n
 
 
+def print_cats_with_hats(number_of_cats: int, number_of_rounds: int) -> list:
+    keys_list = []
+    # generate a list of cat numbers
+    for i in range(1, number_of_cats + 1):
+        keys_list.append(i)
 
-
-l = []
-cat_in_hat = 0
-for i in range(1, 11):
-    l.append(i)
-
-dict = {}
-dict = dict.fromkeys(tuple(l),1)
-
-# print(change_status(dict, 1))
-
-# print(dict)
-def print_cats_with_hats():
-    l = []
-    # cat_in_hat = 0
-    for i in range(1, 11):
-        l.append(i)
-
+    # created a dictionary with keys - numbers of cats and values - 0 (cat without a hat)
     dict = {}
-    dict = dict.fromkeys(tuple(l),0)
-    for i in range(1, 11):
-        for j in range(1, 11):
-            if j%i == 0:
+    dict = dict.fromkeys(tuple(keys_list), 0)
+
+    # we go through all rounds of the game with an outer loop. we go through the 
+    # numbers of all the cats in an inner loop and, according to the round, 
+    # change the values in the dictionary
+    for i in range(1, number_of_rounds + 1):
+        for j in range(1, number_of_cats + 1):
+            if j % i == 0:
                 change_status(dict, j)
-    return dict
 
-print(a())
+    # we check the resulting dictionary values, 
+    # and output those keys where the value is equal to one           
+    list_of_cats_with_hats = []
+    result = tuple(dict.values())
+    for i in range(len(result)):
+        if result[i] == 1:
+            list_of_cats_with_hats.append(i+1)
+    return list_of_cats_with_hats
 
 
-# x = dict.update([(1,int(not(dict.get(1))))])
-
-
-# print(x)
+print(print_cats_with_hats(1000, 1000))
