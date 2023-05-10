@@ -1,0 +1,27 @@
+
+A.txt :20
+B.txt :80
+C.txt :22
+D.txt :48
+E.txt :27
+F.txt :24
+G.txt :30
+H.txt :61
+I.txt :66
+J.txt :47
+K.txt :42
+L.txt :88
+M.txt :46
+N.txt :16
+O.txt :77
+P.txt :96
+Q.txt :81
+R.txt :8
+S.txt :44
+T.txt :2
+U.txt :11
+V.txt :67
+W.txt :85
+X.txt :45
+Y.txt :61
+Z.txt :2
