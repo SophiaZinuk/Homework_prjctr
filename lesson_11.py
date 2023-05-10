@@ -54,6 +54,8 @@ def try_astros():
         all_astronauts += 1
     print(f'There are now {all_astronauts} astronauts in space')
 
+# try_astros()
+
 # Create a program that will ask user to search a word. Search this word in Giphy (use their API). Return links to these GIFs as a result
 def giphy_search():
     query = input("Your search query: ")
@@ -66,8 +68,10 @@ def giphy_search():
                 print(giphy_search0["data"][0]["url"])
             case _:
                 print(f'Eror in status code: {giphy_search.status_code}')
-    except Exception as ex:
-        print("Something goes wrong... \nTry another data.", ex)
+    except:
+        print("Nothing has found... \nTry another data.")
+
+# giphy_search()
 
 
 # Взяти API-weather, розпарсити і вивезти погоду від користувача
@@ -91,6 +95,3 @@ def get_weather_now():
             print(f"The weather is {result['weather'][0]['main']}, \nTemperature: {round(result['main']['temp'] - 273.15, 2)}, feels like {round(result['main']['feels_like'] - 273.15, 2)}; \nWind speed: {result['wind']['speed']}")
         case _:
             print('Something goes wrong... \nTry another data.')
-
-
-
