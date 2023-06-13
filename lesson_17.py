@@ -73,8 +73,17 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 session.close()
-first = session.query(Student).join(Student_Subject).join(Subject).filter(Subject.name == 'English')
-print(first)
+
+
+# second = session.query(Student, Subject, Student_Subject).\
+#     select_from(Student).join(Subject).join(Student_Subject).all()
+# for student, subject, student_subject in second:
+#     print(Student.name)
+
+results = session.query(Student.name).join(Student_Subject).join(Subject).\
+    filter(Subject.name == 'English')
+for result in results:
+    print(result)
 
 # first_student = session.query(Student_Subject)
 
